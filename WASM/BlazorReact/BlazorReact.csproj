@@ -50,15 +50,15 @@
   </PropertyGroup>
 
   
-  <Target Name="npm restore" BeforeTargets="BeforeBuild">
-    <Exec Command="npm install" />
+  <Target Name="yarn restore" BeforeTargets="BeforeBuild">
+    <Exec Command="yarn install" />
   </Target>
 
   <Target Name="webpack" AfterTargets="Build">
-    <Exec Command="npm run pack" />
+    <Exec Command="yarn run pack" />
   </Target>
 
   <Target Name="webpack clean" AfterTargets="Clean" Condition="Exists('node_modules')">
-    <Exec Command="npm run clean" />
+    <Exec Command="yarn run clean" />
   </Target>
 </Project>
